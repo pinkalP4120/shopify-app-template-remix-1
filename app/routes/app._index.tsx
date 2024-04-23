@@ -93,7 +93,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function Index() {
   const nav = useNavigation();
-  const actionData = useActionData<typeof action>();
+    const actionData = useActionData<typeof action>();
   const submit = useSubmit();
   const isLoading =
     ["loading", "submitting"].includes(nav.state) && nav.formMethod === "POST";
@@ -115,7 +115,14 @@ export default function Index() {
         <button variant="primary" onClick={generateProduct}>
           Generate a product
         </button>
+        <button onClick={() => shopify.saveBar.toggle('saveBar')}>
+          Toggle saveBar
+        </button>
       </ui-title-bar>
+      <ui-save-bar id="saveBar">
+        <button variant="primary" onClick={() => shopify.saveBar.show('saveBar')}></button>
+        <button onClick={() => shopify.saveBar.hide('saveBar')}></button>
+      </ui-save-bar>
       <BlockStack gap="500">
         <Layout>
           <Layout.Section>

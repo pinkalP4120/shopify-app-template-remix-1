@@ -7,18 +7,21 @@ import {
   Page,
   Text,
   BlockStack,
-} from "@shopify/polaris";
+} from '@shopify/polaris';
 
 export default function AdditionalPage() {
   return (
     <Page>
-      <ui-title-bar title="Additional page">
+      <ui-title-bar title="Additional page 2">
         <button onClick={() => shopify.saveBar.toggle('saveBar')}>
           Toggle saveBar
         </button>
       </ui-title-bar>
       <ui-save-bar id="saveBar">
-        <button variant="primary" onClick={() => shopify.saveBar.show('saveBar')}></button>
+        <button
+          variant="primary"
+          onClick={() => shopify.saveBar.show('saveBar')}
+        ></button>
         <button onClick={() => shopify.saveBar.hide('saveBar')}></button>
       </ui-save-bar>
       <Layout>
@@ -28,7 +31,7 @@ export default function AdditionalPage() {
               <Text as="p" variant="bodyMd">
                 The app template comes with an additional page which
                 demonstrates how to create multiple pages within app navigation
-                using{" "}
+                using{' '}
                 <Link
                   url="https://shopify.dev/docs/apps/tools/app-bridge"
                   target="_blank"
@@ -72,7 +75,7 @@ export default function AdditionalPage() {
   );
 }
 
-function Code({ children }: { children: React.ReactNode }) {
+function Code({children}: {children: React.ReactNode}) {
   return (
     <Box
       as="span"
